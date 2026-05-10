@@ -18,12 +18,12 @@ export default function MovieCard({ item }: Props) {
             className="group relative aspect-2/3 overflow-hidden rounded-lg bg-neutral-900
         transition-transform hover:scale-105"
         >
-            {/* Poster image - use posterUrl, if null show a fallback div */}
             {posterUrl ? (
                 <Image
                     src={posterUrl}
                     alt={title}
                     fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                     className="object-cover"
                 />
             ) : (
@@ -31,8 +31,7 @@ export default function MovieCard({ item }: Props) {
                     No Image
                 </div>
             )}
-            {/* Info overlay at the bottom */}
-            <div className="p-3">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-3">
                 <p className="truncate text-sm font-medium text-white">
                     {title}
                 </p>
