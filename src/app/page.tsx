@@ -3,7 +3,7 @@ import TrendingSection from "@/components/home/trending-section"
 
 export default function Home() {
     return (
-        <main className="max-w-7xl mx-auto px-5 py-8 space-y-12">
+        <main className="w-full max-w-7xl mx-auto px-5 py-8 space-y-12">
             <section className="space-y-4">
                 <h2 className="font-bold text-2xl">Trending</h2>
                 <TrendingSection />
