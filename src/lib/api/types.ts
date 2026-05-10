@@ -26,3 +26,20 @@ export interface PaginatedResponse<T> {
     total_pages: number
     total_results: number
 }
+
+export interface MovieDetails extends Movie {
+    runtime: number
+    genres: { id: number; name: string }[]
+    tagline: string
+}
+
+export interface Cast {
+    id: number
+    name: string
+    character: string
+    profile_path: string | null
+}
+
+export interface Credits {
+    cast: Cast[]
+}
