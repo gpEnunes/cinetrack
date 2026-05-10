@@ -1,0 +1,59 @@
+export default function Logo({ size = 32 }: { size?: number }) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <rect width="40" height="40" rx="8" fill="#E11D48" />
+            <rect
+                x="4"
+                y="4"
+                width="5"
+                height="5"
+                rx="1"
+                fill="white"
+                opacity="0.9"
+            />
+            <rect
+                x="31"
+                y="4"
+                width="5"
+                height="5"
+                rx="1"
+                fill="white"
+                opacity="0.9"
+            />
+            <rect
+                x="4"
+                y="31"
+                width="5"
+                height="5"
+                rx="1"
+                fill="white"
+                opacity="0.9"
+            />
+            <rect
+                x="31"
+                y="31"
+                width="5"
+                height="5"
+                rx="1"
+                fill="white"
+                opacity="0.9"
+            />
+            <rect
+                x="4"
+                y="13"
+                width="32"
+                height="14"
+                rx="2"
+                fill="white"
+                opacity="0.15"
+            />
+            <path d="M16 13L28 20L16 27V13Z" fill="white" />
+        </svg>
+    )
+}
