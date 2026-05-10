@@ -22,7 +22,7 @@ export interface TvShow {
 
 export interface PaginatedResponse<T> {
     page: number
-    results: T[],
+    results: T[]
     total_pages: number
     total_results: number
 }
