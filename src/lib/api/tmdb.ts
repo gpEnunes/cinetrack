@@ -1,5 +1,5 @@
 import { tmdbFetch } from "./client"
-import { Movie, MovieDetails, Credits, TvShow, PaginatedResponse } from "./types"
+import { Movie, MovieDetails, Credits, TvShow, PaginatedResponse, TvShowDetails } from "./types"
 
 export function getTrending(): Promise<PaginatedResponse<Movie>> {
     return tmdbFetch("/trending/movie/day")
@@ -26,3 +26,11 @@ export function getMovieDetails(id: string): Promise<MovieDetails> {
 export function getMovieCredits(id: string): Promise<Credits> {
     return tmdbFetch(`/movie/${id}/credits`)
 }
+
+export function getTvDetails(id: string): Promise<TvShowDetails> {
+    return tmdbFetch(`/tv/${id}`)
+}
+
+export function getTvCredits(id: string): Promise<Credits> {
+    return tmdbFetch(`/tv/${id}/credits`)
+}   
