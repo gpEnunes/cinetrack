@@ -1,12 +1,13 @@
 import { Movie, TvShow } from "@/lib/api/types"
 import Image from "next/image"
-import { Star } from "lucide-react"
+import { Star, X } from "lucide-react"
 import Link from "next/link"
 type Props = {
     item: Movie | TvShow
+    onRemove?: () => void
 }
 
-export default function MovieCard({ item }: Props) {
+export default function MovieCard({ item, onRemove }: Props) {
     const title = "title" in item ? item.title : item.name
     const date =
         "release_date" in item ? item.release_date : item.first_air_date
@@ -46,6 +47,18 @@ export default function MovieCard({ item }: Props) {
                         </span>
                     </div>
                 </div>
+                {onRemove && (
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault()
+                            onRemove()
+                        }}
+                        className="absolute top-2 right-2 rounded-full bg-black/60 p-1 text-white opacity-0
+  group-hover:opacity-100 transition-opacity"
+                    >
+                        <X className="size-4" />
+                    </button>
+                )}
             </div>
         </Link>
     )
