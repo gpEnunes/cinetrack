@@ -1,6 +1,7 @@
 import { getMovieDetails, getMovieCredits } from "@/lib/api/tmdb"
 import Image from "next/image"
 import { WatchlistButton } from "@/components/watchlist-button"
+import { WatchedButton } from "@/components/watched-button"
 type Props = {
     params: Promise<{ id: string }>
 }
@@ -80,6 +81,7 @@ export default async function MoviePage({ params }: Props) {
                             ))}
                         </div>
                         <WatchlistButton item={watchlistItem} />
+                        <WatchedButton item={watchlistItem} />
                         <p
                             className="text-neutral-300 leading-relaxed
   max-w-2xl"
