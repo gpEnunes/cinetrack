@@ -43,3 +43,10 @@ export interface Cast {
 export interface Credits {
     cast: Cast[]
 }
+
+export interface TvShowDetails extends TvShow {
+    number_of_seasons: number
+    number_of_episodes: number
+    genres: { id: number; name: string }[]
+    tagline: string
+}
