@@ -1,5 +1,6 @@
 import { getMovieDetails, getMovieCredits } from "@/lib/api/tmdb"
 import Image from "next/image"
+import { WatchlistButton } from "@/components/watchlist-button"
 type Props = {
     params: Promise<{ id: string }>
 }
@@ -14,6 +15,7 @@ export default async function MoviePage({ params }: Props) {
     const backdrop = movie.backdrop_path
         ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
         : null
+    const watchlistItem = { ...movie, mediaType: "movie" as const }
 
     return (
         <main className="w-full">
@@ -77,6 +79,7 @@ export default async function MoviePage({ params }: Props) {
                                 </span>
                             ))}
                         </div>
+                        <WatchlistButton item={watchlistItem} />
                         <p
                             className="text-neutral-300 leading-relaxed
   max-w-2xl"
