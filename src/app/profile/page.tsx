@@ -1,9 +1,11 @@
 "use client"
 import { useUser } from "@clerk/nextjs"
 import { useWatchlist } from "@/hooks/useWatchlist"
+import { useWatched } from "@/hooks/useWatched"
 import Image from "next/image"
 export default function ProfilePage() {
     const { watchlist } = useWatchlist()
+    const { watched } = useWatched()
     const { user } = useUser()
     if (!user) return null
     return (
@@ -28,7 +30,7 @@ export default function ProfilePage() {
                     <p className="text-neutral-400 text-sm">Watchlist</p>
                 </div>
                 <div className="bg-neutral-800 rounded-lg p-6 text-center flex-1">
-                    <p className="text-3xl font-bold">0</p>
+                    <p className="text-3xl font-bold">{watched.length}</p>
                     <p className="text-neutral-400 text-sm">Watched</p>
                 </div>
             </div>
